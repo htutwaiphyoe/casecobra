@@ -7,7 +7,7 @@ const state = {
     fetchData: false,
 };
 
-/*************
+/*************************
  * HOME
  */
 const homeHandler = async (type) => {
