@@ -100,13 +100,41 @@ body {
   padding: 3rem 2rem;
 }
 .photos__box {
+  margin-bottom: 2rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
+  grid-template-areas: "s0 b0 b1" "b2 b0 b1" "b2 s1 b3" "b4 b5 b3" "b4 b5 s2";
   gap: 2rem;
 }
 .photos__box img {
   width: 100%;
+  height: 100%;
+}
+.photos__box-sm--0 {
+  grid-area: s0;
+}
+.photos__box-sm--1 {
+  grid-area: s1;
+}
+.photos__box-sm--2 {
+  grid-area: s2;
+}
+.photos__box-big--0 {
+  grid-area: b0;
+}
+.photos__box-big--1 {
+  grid-area: b1;
+}
+.photos__box-big--2 {
+  grid-area: b2;
+}
+.photos__box-big--3 {
+  grid-area: b3;
+}
+.photos__box-big--4 {
+  grid-area: b4;
+}
+.photos__box-big--5 {
+  grid-area: b5;
 }
 
 /*# sourceMappingURL=style.css.map */

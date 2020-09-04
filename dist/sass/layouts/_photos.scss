@@ -2,13 +2,53 @@
     padding: 3rem 2rem;
 
     &__box {
+        margin-bottom: 2rem;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto;
+        grid-template-areas:
+            "s0 b0 b1"
+            "b2 b0 b1"
+            "b2 s1 b3"
+            "b4 b5 b3"
+            "b4 b5 s2";
+
         gap: 2rem;
 
         img {
             width: 100%;
+            height: 100%;
+        }
+
+        &-sm {
+            &--0 {
+                grid-area: s0;
+            }
+            &--1 {
+                grid-area: s1;
+            }
+            &--2 {
+                grid-area: s2;
+            }
+        }
+
+        &-big {
+            &--0 {
+                grid-area: b0;
+            }
+            &--1 {
+                grid-area: b1;
+            }
+            &--2 {
+                grid-area: b2;
+            }
+            &--3 {
+                grid-area: b3;
+            }
+            &--4 {
+                grid-area: b4;
+            }
+            &--5 {
+                grid-area: b5;
+            }
         }
     }
 }

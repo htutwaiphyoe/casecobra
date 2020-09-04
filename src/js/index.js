@@ -18,7 +18,7 @@ const homeHandler = async (type) => {
         state.home = new Home(state.homeScroll);
 
         await state.home.getPhotos();
-        console.log(state.home);
+
         state.home.photos.forEach((photo) => {
             homeView.renderPhotos(photo);
         });
