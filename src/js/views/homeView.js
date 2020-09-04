@@ -13,7 +13,6 @@ const generatePhotos = (photos) => {
         />
         </div>
         `;
-
         photo.width >= photo.height
             ? photoSmalls.push(photoDOMString)
             : photoBigs.push(photoDOMString);
@@ -22,6 +21,5 @@ const generatePhotos = (photos) => {
 };
 export const renderPhotos = (photos) => {
     let markup = `<div class="photos__box">${generatePhotos(photos)}</div>`;
-
     DOMs.photos.insertAdjacentHTML("beforeend", markup);
 };
