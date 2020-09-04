@@ -1,6 +1,7 @@
 import Home from "./models/Home";
 import * as homeView from "./views/homeView";
 import { DOMs } from "./views/base";
+
 const state = {
     homeScroll: 1,
     fetchData: false,
