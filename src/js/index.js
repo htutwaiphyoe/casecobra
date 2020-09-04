@@ -27,6 +27,10 @@ const homeHandler = async (type) => {
     }
 };
 window.addEventListener("load", homeHandler);
+
+/***********
+ * SCROLL
+ */
 window.addEventListener("scroll", () => {
     console.log();
     if (!state.fetchData) {
