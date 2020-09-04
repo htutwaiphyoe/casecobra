@@ -9,7 +9,6 @@ const state = {
 /*************
  * HOME
  */
-
 const homeHandler = async (type) => {
     try {
         if (type === "scroll") {
