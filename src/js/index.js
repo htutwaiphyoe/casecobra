@@ -32,11 +32,9 @@ window.addEventListener("load", homeHandler);
  * SCROLL
  */
 window.addEventListener("scroll", () => {
-    console.log();
     if (!state.fetchData) {
         if (window.scrollY + window.innerHeight >= DOMs.photos.scrollHeight) {
             state.homeScroll += 1;
-
             homeHandler("scroll");
         }
     }
