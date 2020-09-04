@@ -96,4 +96,17 @@ body {
   cursor: pointer;
 }
 
+.photos {
+  padding: 3rem 2rem;
+}
+.photos__box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 2rem;
+}
+.photos__box img {
+  width: 100%;
+}
+
 /*# sourceMappingURL=style.css.map */

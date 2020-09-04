@@ -1,0 +1,17 @@
+.photos {
+    padding: 3rem 2rem;
+
+    &__box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+
+        gap: 2rem;
+
+        &-small {
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
