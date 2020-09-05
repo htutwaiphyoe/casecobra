@@ -12,7 +12,7 @@ const generatePhotos = (photos) => {
     const smallDOMString = smalls.map(
         (small, index) =>
             `
-                <div class="photos__box-sm photos__box-sm--${index} data-id="${small.id}">
+                <div class="photos__box-sm photos__box-sm--${index}" data-id="${small.id}">
                     <img
                         src="${small.urls.regular}" alt="${small.alt_description}"
                     />
@@ -23,7 +23,7 @@ const generatePhotos = (photos) => {
     const bigDOMString = bigs.map(
         (small, index) =>
             `
-                <div class="photos__box-big photos__box-big--${index} data-id="${small.id}">
+                <div class="photos__box-big photos__box-big--${index}" data-id="${small.id}">
                     <img
                         src="${small.urls.regular}" alt="${small.alt_description}"
                     />
@@ -34,7 +34,6 @@ const generatePhotos = (photos) => {
     return [...smallDOMString, ...bigDOMString].join("");
 };
 export const renderPhotos = (photos) => {
-    console.log(photos[0]);
     let markup = `<div class="photos__box">${generatePhotos(photos)}</div>`;
     DOMs.photos.insertAdjacentHTML("beforeend", markup);
 };

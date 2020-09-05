@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default class Home {
-    constructor(page, perPage = 20) {
+    constructor(page, perPage = 30) {
         this.page = page;
         this.perPage = perPage;
         this.photos = [];

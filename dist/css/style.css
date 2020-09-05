@@ -180,7 +180,7 @@ body {
 }
 .photos__box .photos__box-big:hover, .photos__box .photos__box-sm:hover {
   cursor: zoom-in;
-  opacity: 0.7;
+  opacity: 0.8;
   filter: blur(1px);
   -webkit-filter: blur(1px);
 }
