@@ -36,7 +36,10 @@ export const renderSearch = (photos, total) => {
         let markup = `<div class="photos__box">${generatePhotos(photos)}</div>`;
         DOMs.photos.insertAdjacentHTML("beforeend", markup);
     } else {
-        let markup = `<div>Nothing found</div>`;
+        let markup = `<div class="error">
+       
+        Nothing Found!
+        </div>`;
         DOMs.photos.insertAdjacentHTML("beforeend", markup);
     }
 };

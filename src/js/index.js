@@ -112,15 +112,12 @@ window.addEventListener("scroll", () => {
         if (window.scrollY + window.innerHeight >= DOMs.photos.scrollHeight) {
             state.homeScroll += 1;
             homeHandler("scroll");
-
-            console.log(state);
         }
     }
     if (!state.fetchData && state.searchData) {
         if (window.scrollY + window.innerHeight >= DOMs.photos.scrollHeight) {
             state.searchScroll += 1;
 
-            console.log(state);
             searchHandler("scroll");
         }
     }
