@@ -4,7 +4,7 @@ export const renderPhoto = (photo) => {
     const markup = `
     <div class="details__box">
         <div class="details__header">
-            <a href="#">
+            <a href="${photo.user.links.html}">
                 <div class="details__user">
                     <div class="details__user-photo">
                         <img
