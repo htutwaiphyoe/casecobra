@@ -157,15 +157,21 @@ body {
   justify-content: center;
   align-items: center;
 }
+.header__auth a {
+  text-decoration: none;
+  color: inherit;
+}
 .header__login {
   padding: 1rem;
+  margin-right: 1rem;
   border: 1px solid var(--background);
   cursor: pointer;
 }
 .header__signup {
   padding: 1rem;
-  border: 1px solid var(--background);
-  background-color: var(--background);
+  border: 1px solid #111;
+  background-color: #111;
+  color: #fff;
   cursor: pointer;
 }
 

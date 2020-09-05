@@ -2,11 +2,23 @@ import Home from "./models/Home";
 import * as homeView from "./views/homeView";
 import Photo from "./models/Photo";
 import * as photoView from "./views/photoView";
-import { DOMs, loader, clearLoader, clearPhoto, removeScrollBar } from "./views/base";
+import Search from "./models/Search";
+import * as searchView from "./views/searchView";
+import {
+    DOMs,
+    loader,
+    clearLoader,
+    clearPhoto,
+    removeScrollBar,
+    clearInput,
+    clearPhotos,
+} from "./views/base";
 
 const state = {
     homeScroll: 1,
+    searchScroll: 1,
     fetchData: false,
+    searchData: false,
 };
 
 /*************************
@@ -22,28 +34,17 @@ const homeHandler = async (type) => {
         state.home = new Home(state.homeScroll);
 
         await state.home.getPhotos();
+
         clearLoader();
-        state.home.photos.forEach((photo) => {
-            homeView.renderPhotos(photo);
-        });
+
+        homeView.renderPhotos(state.home.photos);
+
         state.fetchData = false;
     } catch (err) {
         alert(err);
     }
 };
 window.addEventListener("load", homeHandler);
-
-/*************************
- * SCROLL
- */
-window.addEventListener("scroll", () => {
-    if (!state.fetchData) {
-        if (window.scrollY + window.innerHeight >= DOMs.photos.scrollHeight) {
-            state.homeScroll += 1;
-            homeHandler("scroll");
-        }
-    }
-});
 
 /***********************
  * Full Photo
@@ -53,7 +54,6 @@ const fullPhotoHandler = async (id) => {
     try {
         state.photoDetail = new Photo(id);
         await state.photoDetail.getPhoto();
-        console.log(state.photoDetail.photo);
         photoView.renderPhoto(state.photoDetail.photo);
         DOMs.details.style.display = "flex";
         removeScrollBar();
@@ -71,4 +71,57 @@ document.querySelector(".details__close").addEventListener("click", () => {
     clearPhoto();
     DOMs.details.style.display = "none";
     removeScrollBar();
+});
+
+/*************************
+ * Search
+ */
+
+const searchHandler = async (type) => {
+    if (type === "scroll") {
+        state.fetchData = true;
+    } else {
+        state.query = DOMs.searchInput.value;
+    }
+
+    if (state.query) {
+        DOMs.photos.insertAdjacentHTML("beforeend", loader());
+        state.search = new Search(state.query, state.searchScroll);
+        await state.search.getSearch();
+        clearLoader();
+
+        searchView.renderSearch(state.search.searchPhotos, state.search.total);
+
+        state.fetchData = false;
+    }
+};
+window.addEventListener("keypress", (e) => {
+    if (e.keyCode === 13 || e.which === 13) {
+        clearPhotos();
+        state.searchData = true;
+        searchHandler();
+        clearInput();
+    }
+});
+
+/*************************
+ * SCROLL
+ */
+window.addEventListener("scroll", () => {
+    if (!state.fetchData && !state.searchData) {
+        if (window.scrollY + window.innerHeight >= DOMs.photos.scrollHeight) {
+            state.homeScroll += 1;
+            homeHandler("scroll");
+
+            console.log(state);
+        }
+    }
+    if (!state.fetchData && state.searchData) {
+        if (window.scrollY + window.innerHeight >= DOMs.photos.scrollHeight) {
+            state.searchScroll += 1;
+
+            console.log(state);
+            searchHandler("scroll");
+        }
+    }
 });

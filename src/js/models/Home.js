@@ -4,7 +4,6 @@ export default class Home {
     constructor(page, perPage = 30) {
         this.page = page;
         this.perPage = perPage;
-        this.photos = [];
     }
 
     async getPhotos() {
@@ -17,6 +16,6 @@ export default class Home {
             },
         });
 
-        this.photos.push(photos.data);
+        this.photos = photos.data;
     }
 }
