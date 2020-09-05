@@ -1,7 +1,8 @@
 import Home from "./models/Home";
 import * as homeView from "./views/homeView";
 import Photo from "./models/Photo";
-import { DOMs, loader, clearLoader } from "./views/base";
+import * as photoView from "./views/photoView";
+import { DOMs, loader, clearLoader, clearPhoto } from "./views/base";
 
 const state = {
     homeScroll: 1,
@@ -52,6 +53,9 @@ const fullPhotoHandler = async (id) => {
     try {
         state.photoDetail = new Photo(id);
         await state.photoDetail.getPhoto();
+        console.log(state.photoDetail.photo);
+        photoView.renderPhoto(state.photoDetail.photo);
+        DOMs.details.style.display = "flex";
     } catch (err) {
         alert(err);
     }
@@ -60,4 +64,9 @@ DOMs.photos.addEventListener("click", (e) => {
     const id = e.target.parentElement.dataset.id;
 
     if (id) fullPhotoHandler(id);
+});
+
+document.querySelector(".details__close").addEventListener("click", () => {
+    clearPhoto();
+    DOMs.details.style.display = "none";
 });

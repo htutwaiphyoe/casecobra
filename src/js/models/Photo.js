@@ -15,7 +15,6 @@ export default class Photo {
             },
         });
 
-        console.log(photo);
-        this.photo = photo;
+        this.photo = photo.data;
     }
 }
