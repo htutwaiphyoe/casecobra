@@ -29,3 +29,9 @@ body {
     color: var(--foreground);
     background-color: var(--background);
 }
+
+.show {
+    // width: 100% !important;
+    // height: 100vh !important;
+    overflow: hidden !important;
+}
