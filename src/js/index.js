@@ -1,6 +1,6 @@
 import Home from "./models/Home";
 import * as homeView from "./views/homeView";
-import { DOMs } from "./views/base";
+import { DOMs, loader, clearLoader } from "./views/base";
 
 const state = {
     homeScroll: 1,
@@ -12,13 +12,14 @@ const state = {
  */
 const homeHandler = async (type) => {
     try {
+        DOMs.photos.insertAdjacentHTML("beforeend", loader());
         if (type === "scroll") {
             state.fetchData = true;
         }
         state.home = new Home(state.homeScroll);
 
         await state.home.getPhotos();
-
+        clearLoader();
         state.home.photos.forEach((photo) => {
             homeView.renderPhotos(photo);
         });

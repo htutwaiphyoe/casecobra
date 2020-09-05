@@ -31,18 +31,7 @@ const generatePhotos = (photos) => {
 
 `
     );
-    // return [...smallDOMString, ...bigDOMString].join("");
-    return [
-        smallDOMString[0],
-        bigDOMString[0],
-        bigDOMString[1],
-        bigDOMString[2],
-        smallDOMString[1],
-        bigDOMString[3],
-        bigDOMString[4],
-        bigDOMString[5],
-        smallDOMString[2],
-    ].join("");
+    return [...smallDOMString, ...bigDOMString].join("");
 };
 export const renderPhotos = (photos) => {
     console.log(photos[0]);
