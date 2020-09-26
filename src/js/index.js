@@ -41,7 +41,7 @@ const homeHandler = async (type) => {
 
         state.fetchData = false;
     } catch (err) {
-        alert(err);
+        alert("Oops! Something went wrong.");
     }
 };
 window.addEventListener("load", homeHandler);
@@ -58,7 +58,7 @@ const fullPhotoHandler = async (id) => {
         DOMs.details.style.display = "flex";
         removeScrollBar();
     } catch (err) {
-        alert(err);
+        alert("Oops! Something went wrong.");
     }
 };
 DOMs.photos.addEventListener("click", (e) => {
@@ -78,21 +78,25 @@ document.querySelector(".details__close").addEventListener("click", () => {
  */
 
 const searchHandler = async (type) => {
-    if (type === "scroll") {
-        state.fetchData = true;
-    } else {
-        state.query = DOMs.searchInput.value;
-    }
+    try {
+        if (type === "scroll") {
+            state.fetchData = true;
+        } else {
+            state.query = DOMs.searchInput.value;
+        }
 
-    if (state.query) {
-        DOMs.photos.insertAdjacentHTML("beforeend", loader());
-        state.search = new Search(state.query, state.searchScroll);
-        await state.search.getSearch();
-        clearLoader();
+        if (state.query) {
+            DOMs.photos.insertAdjacentHTML("beforeend", loader());
+            state.search = new Search(state.query, state.searchScroll);
+            await state.search.getSearch();
+            clearLoader();
 
-        searchView.renderSearch(state.search.searchPhotos, state.search.total, state.fetchData);
+            searchView.renderSearch(state.search.searchPhotos, state.search.total, state.fetchData);
 
-        state.fetchData = false;
+            state.fetchData = false;
+        }
+    } catch (err) {
+        alert("Oops! Something went wrong.");
     }
 };
 window.addEventListener("keypress", (e) => {
