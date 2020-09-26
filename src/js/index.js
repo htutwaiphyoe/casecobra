@@ -90,7 +90,7 @@ const searchHandler = async (type) => {
         await state.search.getSearch();
         clearLoader();
 
-        searchView.renderSearch(state.search.searchPhotos, state.search.total);
+        searchView.renderSearch(state.search.searchPhotos, state.search.total, state.fetchData);
 
         state.fetchData = false;
     }
