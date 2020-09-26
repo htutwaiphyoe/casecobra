@@ -33,7 +33,7 @@ const generatePhotos = (photos) => {
     });
     let smalls = [];
     let bigs = [];
-    console.log(photoSmalls.length, photoBigs.length);
+
     if (photoSmalls.length - photoBigs.length > 10) {
         smalls = photoSmalls.splice(0, 4);
         bigs = photoBigs.splice(0, 1);
