@@ -27,7 +27,28 @@
             "b2 s1 b3"
             "b4 b5 b3"
             "b4 b5 s2";
-
+        @include responsive(50) {
+            grid-template-areas:
+                "s0 b0"
+                "b2 b0"
+                "b2 s1"
+                "b4 b5"
+                "b4 b5"
+                "b1 b3"
+                "b1 b3";
+        }
+        @include responsive(36) {
+            grid-template-areas:
+                "s0"
+                "b0"
+                "s1"
+                "b1"
+                "s2"
+                "b2"
+                "b3"
+                "b4"
+                "b5";
+        }
         &-sm {
             &:hover {
                 @extend %image-hover;
@@ -41,6 +62,11 @@
             }
             &--2 {
                 grid-area: s2;
+            }
+            @include responsive(50) {
+                &--2 {
+                    display: none;
+                }
             }
             transition: all 0.1s;
             -webkit-transition: all 0.1s;
@@ -85,6 +111,21 @@
         grid-template-areas:
             "s0 b0 s1"
             "s2 b0 s3";
+
+        @include responsive(50) {
+            grid-template-areas:
+                "s0 b0"
+                "s1 b0"
+                "s2 s3";
+        }
+        @include responsive(36) {
+            grid-template-areas:
+                "s0"
+                "s1"
+                "b0"
+                "s2"
+                "s3";
+        }
         &-sm {
             &:hover {
                 @extend %image-hover;
@@ -133,7 +174,19 @@
         grid-template-areas:
             "b0 s0 b1"
             "b0 s1 b1";
-
+        @include responsive(50) {
+            grid-template-areas:
+                "b0 s1"
+                "b0 b1"
+                "s0 b1";
+        }
+        @include responsive(36) {
+            grid-template-areas:
+                "s0"
+                "b0"
+                "s1"
+                "b1";
+        }
         &-sm {
             &:hover {
                 @extend %image-hover;

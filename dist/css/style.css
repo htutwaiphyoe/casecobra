@@ -131,6 +131,11 @@ body {
   margin-left: 2rem;
   flex: 4;
 }
+@media only screen and (max-width: 30em) {
+  .header__search {
+    flex: 1000;
+  }
+}
 .header__search-input {
   width: 100%;
   padding: 1.3rem;
@@ -176,12 +181,22 @@ body {
   border: 1px solid var(--background);
   cursor: pointer;
 }
+@media only screen and (max-width: 40em) {
+  .header__login {
+    display: none;
+  }
+}
 .header__signup {
   padding: 1rem;
   border: 1px solid #111;
   background-color: #111;
   color: #fff;
   cursor: pointer;
+}
+@media only screen and (max-width: 30em) {
+  .header__signup {
+    display: none;
+  }
 }
 
 .photos {
@@ -206,6 +221,16 @@ body {
 .photos__box {
   grid-template-areas: "s0 b0 b1" "b2 b0 b1" "b2 s1 b3" "b4 b5 b3" "b4 b5 s2";
 }
+@media only screen and (max-width: 50em) {
+  .photos__box {
+    grid-template-areas: "s0 b0" "b2 b0" "b2 s1" "b4 b5" "b4 b5" "b1 b3" "b1 b3";
+  }
+}
+@media only screen and (max-width: 36em) {
+  .photos__box {
+    grid-template-areas: "s0" "b0" "s1" "b1" "s2" "b2" "b3" "b4" "b5";
+  }
+}
 .photos__box-sm {
   transition: all 0.1s;
   -webkit-transition: all 0.1s;
@@ -221,6 +246,11 @@ body {
 }
 .photos__box-sm--2 {
   grid-area: s2;
+}
+@media only screen and (max-width: 50em) {
+  .photos__box-sm--2 {
+    display: none;
+  }
 }
 .photos__box-big {
   transition: all 0.1s;
@@ -249,6 +279,16 @@ body {
 }
 .photos__box-0 {
   grid-template-areas: "s0 b0 s1" "s2 b0 s3";
+}
+@media only screen and (max-width: 50em) {
+  .photos__box-0 {
+    grid-template-areas: "s0 b0" "s1 b0" "s2 s3";
+  }
+}
+@media only screen and (max-width: 36em) {
+  .photos__box-0 {
+    grid-template-areas: "s0" "s1" "b0" "s2" "s3";
+  }
 }
 .photos__box-0-sm {
   transition: all 0.1s;
@@ -281,6 +321,16 @@ body {
 }
 .photos__box-1 {
   grid-template-areas: "b0 s0 b1" "b0 s1 b1";
+}
+@media only screen and (max-width: 50em) {
+  .photos__box-1 {
+    grid-template-areas: "b0 s1" "b0 b1" "s0 b1";
+  }
+}
+@media only screen and (max-width: 36em) {
+  .photos__box-1 {
+    grid-template-areas: "s0" "b0" "s1" "b1";
+  }
 }
 .photos__box-1-sm {
   transition: all 0.1s;
