@@ -385,7 +385,7 @@ body {
   fill: var(--color-light);
 }
 .details__close:hover svg {
-  fill: #fff;
+  fill: #111111;
 }
 .details__box {
   width: 90%;
