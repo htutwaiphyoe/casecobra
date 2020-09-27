@@ -437,6 +437,11 @@ body {
   font-size: 1.1rem;
   color: #767676;
 }
+@media only screen and (max-width: 48em) {
+  .details__download {
+    display: none;
+  }
+}
 .details__download-btn {
   font-size: 1.4rem;
   padding: 0.8rem 1rem;
@@ -459,7 +464,7 @@ body {
   border: 1px solid #767676;
 }
 .details__photo {
-  width: 80%;
+  width: 100%;
   height: 85%;
   margin: 0 auto;
   display: flex;
@@ -467,8 +472,36 @@ body {
   align-items: center;
 }
 .details__photo-box-sm {
-  width: 80%;
-  height: 100%;
+  width: 65%;
+  height: 95%;
+}
+@media only screen and (max-width: 75em) {
+  .details__photo-box-sm {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 62em) {
+  .details__photo-box-sm {
+    height: 80%;
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 48em) {
+  .details__photo-box-sm {
+    height: 70%;
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 36em) {
+  .details__photo-box-sm {
+    height: 60%;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 27em) {
+  .details__photo-box-sm {
+    height: 50%;
+  }
 }
 .details__photo-box-sm img {
   width: 100%;
@@ -477,6 +510,26 @@ body {
 .details__photo-box-big {
   width: 40%;
   height: 100%;
+}
+@media only screen and (max-width: 75em) {
+  .details__photo-box-big {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 62em) {
+  .details__photo-box-big {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 48em) {
+  .details__photo-box-big {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 36em) {
+  .details__photo-box-big {
+    width: 100%;
+  }
 }
 .details__photo-box-big img {
   width: 100%;
@@ -501,6 +554,11 @@ body {
 .details__statistics-likes span, .details__statistics-views span, .details__statistics-downloads span {
   font-size: 1.4rem;
   margin-left: 0.5rem;
+}
+@media only screen and (max-width: 36em) {
+  .details__statistics-views, .details__statistics-downloads {
+    display: none;
+  }
 }
 .details__statistics svg {
   width: 1.7rem;
