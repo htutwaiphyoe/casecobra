@@ -1,6 +1,6 @@
 {
   "name": "@htutwaiphyo/typescript-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Software Development Kit with Typescript",
   "main": "dist/index.js",
   "module": "dist/index.m.js",
@@ -21,7 +21,8 @@
     "dist"
   ],
   "dependencies": {
-    "isomorphic-unfetch": "^4.0.2"
+    "isomorphic-unfetch": "^4.0.2",
+    "typescript": "^5.6.3"
   },
   "devDependencies": {
     "microbundle": "^0.15.1"
