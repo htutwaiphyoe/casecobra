@@ -2,10 +2,10 @@ import { Base } from "./base";
 import { Posts } from "./posts";
 import { applyMixins } from "./utils";
 
-class Typicode extends Base {}
+class SocialPlus extends Base {}
 
-interface Typicode extends Posts {}
+interface SocialPlus extends Posts {}
 
-applyMixins(Typicode, [Posts]);
+applyMixins(SocialPlus, [Posts]);
 
-export default Typicode;
+export default SocialPlus;
